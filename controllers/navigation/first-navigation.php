@@ -33,18 +33,12 @@
                             <li>
                                 <a href="edit-profile.php"><i class="fa fa-edit"></i> Edit Profile</a>
                             </li>
-                        </ul>
-                    </li>	
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bars" style="font-size: 1.27em;"></i>
-                        </a>
-                        <ul class="dropdown-menu">
                             <li>
                                 <a href="components/logout.php"><i class="fa fa-mail-reply"></i> Logout</a>
                             </li>
                         </ul>
                     </li>	
+                    
                 </ul>    
 	        </div><!--/.nav-collapse -->
 	      </div>

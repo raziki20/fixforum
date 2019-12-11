@@ -5,14 +5,9 @@
         $errmsg_arr = array();
         $errflag = false;
         $username=  mysqli_real_escape_string($database,$_REQUEST['username']);
-        $email=  mysqli_real_escape_string($database,$_REQUEST['email']);
         $password=  mysqli_real_escape_string($database,$_REQUEST['password']);
         if($username == '') {
             $errmsg_arr[] = 'Username missing';
-            $errflag = true;
-        }
-        if($email == '') {
-            $errmsg_arr[] = 'Email missing';
             $errflag = true;
         }
         if($password == '') {
@@ -25,7 +20,8 @@
             header("location: authentication-check.php");
             exit();
         }
-        $sql="SELECT user_username,user_email,user_password FROM user WHERE (user_username='$username'AND user_password='$password') OR (user_email='$email'AND user_password='$password')";
+        $sql="SELECT user_username,user_email,user_password FROM user WHERE (user_username='$username'AND user_password='$password') 
+        OR (user_email='$username'AND user_password='$password')";
         $result=  mysqli_query($database,$sql) or die(mysqli_errno());
         $trws= mysqli_num_rows($result);
         if($trws==1){
