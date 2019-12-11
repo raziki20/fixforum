@@ -8,7 +8,7 @@
 ?>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Kategori <?php echo $kategori_id; ?></h3>
+                        <h3 class="panel-title">Tari </h3>
                     </div>
 <?php
                 if($rws_count == 0){          
@@ -22,7 +22,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                
                                 <th>Topic Name</th>
                                 <th>Created By</th>
                             </tr>
@@ -36,7 +36,7 @@
 ?>
                         <tbody>
                             <tr>
-                                <th scope="row"><a href="forum-topic.php?forum_topic_id=<?php echo $rws['forum_topic_id'];?>"><?php echo $rws['forum_topic_id'];?></a></th>
+                                
                                 <td><a href="forum-topic.php?forum_topic_id=<?php echo $rws['forum_topic_id'];?>"><?php echo $rws['forum_topic_name'];?></a></td>
                                 <td><?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?></td>
                             </tr>

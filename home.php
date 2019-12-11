@@ -38,9 +38,17 @@
                                 <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>
                             </div>
                             <div class="col-md-11 column">
-                                <h3><a href="notice-topic.php?notice_topic_id=<?php echo $rws['notice_topic_id'];?>"> <?php echo $rws['notice_topic_name'];?></a></h3>
-                                <hr>
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['notice_topic_time']; ?></i></p>
+                                <hr>
+                                <strong><a href="notice-topic.php?notice_topic_id=<?php echo $rws['notice_topic_id'];?>"> <?php echo $rws['notice_topic_name'];?></a></strong>
+                                <hr>
+                                <?php
+                                if($rws['notice_topic_image']){
+                                    ?>
+                                <img src="userfiles/uploads/<?php echo $rws['notice_topic_image'];?>"  class="img-responsivethumbnail">
+                                <?php
+                                        }
+                                    ?>
                             </div>
                         </div>
                     </div>
@@ -51,6 +59,13 @@
     }
 ?>
         <h1 class="text-center">Latest Forum Topics</h1>
+        <div class="container ">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <a class="btn btn-default" href="add-new-forum-post.php">Add New Post</a>
+            </div>
+        </div>
+    </div>
 <?php 
     //session_start();
     $current_user = $_SESSION['user_username'];
@@ -75,9 +90,17 @@
                                 <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>
                             </div>
                             <div class="col-md-11 column">
-                                <h3><a href="forum-topic.php?forum_topic_id=<?php echo $rws['forum_topic_id'];?>"> <?php echo $rws['forum_topic_name'];?></a></h3>
+                                <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['forum_topic_time']; ?></i></p>  <hr>
+                                <strong><a href="forum-topic.php?forum_topic_id=<?php echo $rws['forum_topic_id'];?>"> <?php echo $rws['forum_topic_name'];?></a></strong>
                                 <hr>
-                                <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['forum_topic_time']; ?></i></p>  
+                                <?php 
+                                if($rws['forum_topic_image']){
+                                    ?>
+                                <img src="userfiles/uploads/<?php echo $rws['forum_topic_image'];?>"  class="img-responsive thumbnail">
+                                <?php
+                                        }
+                                    ?>
+                            </div>
                             </div>
                         </div>
                     </div>

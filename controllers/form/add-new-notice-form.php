@@ -15,5 +15,8 @@
         <label class="radio-inline" for="kategori-inline-radio3"><input type="radio" id="kategori-inline-radio3" name="notice_topic_kategori[]" value="3"> Tari Kreasi </label>
     </div>
     <hr>
+    <label for="forum-topic-attachment">Upload Images</label>
+    <input name="BackgroundImageFile" type="file" id="uploadBackgroundFile" class="btn btn-default" name="forum-topic-attachment"/>
+    <hr>
     <button type="submit" class="btn btn-default" name="submit_button" id="submit_button">Submit</button>
 </form>

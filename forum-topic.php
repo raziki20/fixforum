@@ -45,7 +45,7 @@
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['forum_topic_time']; ?></i></p>
                                 <hr>
                                 <div class="topic-user-name">
-                                    <h3><?php echo $rws['forum_topic_name'];?></h3>    
+                                    <strong><?php echo $rws['forum_topic_name'];?></strong>    
                                 </div>
                                 <hr>
                                 <div class="topic-body">
@@ -66,7 +66,12 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="container">
+                        <div class="row clearfix">
+                        <h3>Comment</h3>
+                        </div>
+                    </div>
+             
 <?php 
     $sql_reply = "SELECT * FROM forum_topic_reply where forum_topic_reply_topic_id = '$forum_topic_id'";
     $result_reply = mysqli_query($database,$sql_reply);
@@ -78,7 +83,6 @@
         $result_search_username_reply = mysqli_query($database,$sql_search_username_reply);
         $rws_search_username_reply = mysqli_fetch_array($result_search_username_reply);
 ?>
-
 <?php
         if($rws_reply_count > 0){
 ?>
