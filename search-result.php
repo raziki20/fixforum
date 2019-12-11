@@ -3,7 +3,7 @@
 <?php include 'controllers/base/head.php' ?>
 <?php include 'controllers/navigation/first-navigation.php' ?> 
 <?php
-    if($_POST){
+    if(isset($_POST)){
         $query=$_POST['search-form'];
         $sql=mysqli_query($database,"select * from forum_topic where forum_topic_name like '%$query%' order by forum_topic_time");
         $number=mysqli_num_rows($sql);

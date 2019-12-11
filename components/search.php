@@ -3,8 +3,8 @@
     session_start();
     if($_POST){
         $q=$_POST['searchword'];
-        $sql_res=mysqli_query($database,"select * from forum_topic where forum_topic_name like '%$query%' order by forum_topic_time LIMIT 5");
-        $result=  mysql_query($sql_res) or die(mysql_errno());
+        $sql_res=mysqli_query($database,"select * from forum_topic where forum_topic_name like '%$q%' order by forum_topic_time LIMIT 5");
+       // $result=  mysqli_query($database,$sql_res) or die(mysqli_errno());
         $trws= mysqli_num_rows($sql_res);
         if($trws>0){
             while($row=mysqli_fetch_array($sql_res)){
