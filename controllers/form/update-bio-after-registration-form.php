@@ -7,7 +7,7 @@
 ?>
     <div class="col-md-6">
         <div class="form-group float-label-control">
-            <label for="">Short Bio</label>
+            <label for="">Biodata</label>
             <textarea class="form-control" placeholder="<?php echo $rws['user_shortbio'];?>" rows="10" placeholder="<?php echo $rws['user_shortbio'];?>" name="user_shortbio" value="<?php echo $rws['user_shortbio'];?>"><?php echo $rws['user_shortbio'];?></textarea>
         </div>
     </div>    
@@ -18,7 +18,8 @@
         </div>
     </div>          
 <?php
-    $user_username =  $_POST['user_username'];
+    if(isset($_SESSION['user_username'])){
+    $user_username =  $_POST['user_username'];}
 ?>     
     <hr>                 
     <div class="submit">           

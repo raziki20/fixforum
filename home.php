@@ -40,7 +40,7 @@
                             <div class="col-md-11 column">
                                 <h3><a href="notice-topic.php?notice_topic_id=<?php echo $rws['notice_topic_id'];?>"> <?php echo $rws['notice_topic_name'];?></a></h3>
                                 <hr>
-                                 
+                                <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['notice_topic_time']; ?></i></p>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                             <div class="col-md-11 column">
                                 <h3><a href="forum-topic.php?forum_topic_id=<?php echo $rws['forum_topic_id'];?>"> <?php echo $rws['forum_topic_name'];?></a></h3>
                                 <hr>
-                                    
+                                <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['forum_topic_time']; ?></i></p>  
                             </div>
                         </div>
                     </div>

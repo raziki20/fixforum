@@ -37,16 +37,9 @@
                 </div>
             </div>  
             <div class="col-md-6">
-                <label for="">Username</label>
                 <div class="form-group float-label-control">
-                    <a href="http://<?php echo $rws['domain_websiteaddress'];?>/<?php echo $rws['user_username'];?>">       
-                        <div class="input-group">
-                            <span class="input-group-addon">http://<?php echo $rws['domain_websiteaddress'];?>/</span>
-                            <fieldset disabled> 
-                                <input type="text" class="form-control" placeholder="<?php echo $rws['user_username'];?>" name="user_username" value="<?php echo $rws['user_username'];?>" id="disabledTextInput" autocomplete="off">
-                            </fieldset>  
-                        </div>
-                    </a>
+                    <label for="">Username</label>
+                    <input type="text" class="form-control" placeholder="<?php echo $rws['user_username'];?>" name="user_username" value="<?php echo $rws['user_username'];?>" disabled>
                 </div>
                 <div class="form-group float-label-control">
                     <label for="">Password</label>
@@ -93,16 +86,9 @@
                     <label for="">Address</label>
                     <input type="text" class="form-control" placeholder="<?php echo $rws['user_address'];?>" name="user_address" value="<?php echo $rws['user_address'];?>">    
                 </div>
-                <label for="">Website</label>
-                <div class="form-group float-label-control">
-                    <div class="input-group">                  
-                        <span class="input-group-addon">http://</span>
-                        <input type="text" class="form-control" placeholder="<?php echo $rws['user_website'];?>" name="user_website" value="<?php echo $rws['user_website'];?>">                  
-                    </div>
-                </div>
                 <div class="form-group float-label-control">
                     <label for="">Sanggar</label>
-                    <textarea class="form-control" rows="20" placeholder="<?php echo $rws['user_longtbio'];?>" name="user_longbio" value="<?php echo $rws['user_longbio'];?>"><?php echo $rws['user_longbio'];?></textarea>                           
+                    <textarea class="form-control" rows="20" name="user_longbio" value=""><?php echo $rws['user_longbio'];?></textarea>                           
                 </div>  
             </div>
         </div>

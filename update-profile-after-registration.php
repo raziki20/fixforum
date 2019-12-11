@@ -7,9 +7,11 @@
               	     <div class="panel panel-default" id="sidebar">
                         <div class="panel-body">
 <?php
+    if(isset($_SESSION['user_username'])){
+    $user_username = $_SESSION['user_username'];
     $sql = "SELECT * FROM user where user_username='$user_username'";
     $result = mysqli_query($database,$sql) or die(mysqli_error($database)); 
-    $rws = mysqli_fetch_array($result);
+    $rws = mysqli_fetch_array($result);}
 ?>                
 <?php include 'controllers/form/update-profile-after-registration-form.php' ?>
                         </div>
