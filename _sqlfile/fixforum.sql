@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2019 at 12:52 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Generation Time: 12 Des 2019 pada 10.05
+-- Versi Server: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,14 +25,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `forum_topic`
+-- Struktur dari tabel `forum_topic`
 --
 
 CREATE TABLE `forum_topic` (
   `forum_topic_id` int(11) NOT NULL,
   `forum_topic_name` text NOT NULL,
   `forum_topic_created_by` varchar(255) NOT NULL,
-  `forum_topic_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `forum_topic_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `forum_topic_body` text NOT NULL,
   `forum_topic_views` int(11) NOT NULL,
   `forum_topic_replies` int(11) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE `forum_topic` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `forum_topic`
+-- Dumping data untuk tabel `forum_topic`
 --
 
 INSERT INTO `forum_topic` (`forum_topic_id`, `forum_topic_name`, `forum_topic_created_by`, `forum_topic_time`, `forum_topic_body`, `forum_topic_views`, `forum_topic_replies`, `forum_topic_kategori`, `forum_topic_image`) VALUES
@@ -55,20 +55,20 @@ INSERT INTO `forum_topic` (`forum_topic_id`, `forum_topic_name`, `forum_topic_cr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `forum_topic_reply`
+-- Struktur dari tabel `forum_topic_reply`
 --
 
 CREATE TABLE `forum_topic_reply` (
   `forum_topic_reply_id` int(11) NOT NULL,
   `forum_topic_reply_topic_id` int(11) NOT NULL,
   `forum_topic_reply_created_by` varchar(255) NOT NULL,
-  `forum_topic_reply_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `forum_topic_reply_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `forum_topic_reply_body` text NOT NULL,
   `forum_topic_reply_image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `forum_topic_reply`
+-- Dumping data untuk tabel `forum_topic_reply`
 --
 
 INSERT INTO `forum_topic_reply` (`forum_topic_reply_id`, `forum_topic_reply_topic_id`, `forum_topic_reply_created_by`, `forum_topic_reply_time`, `forum_topic_reply_body`, `forum_topic_reply_image`) VALUES
@@ -80,35 +80,36 @@ INSERT INTO `forum_topic_reply` (`forum_topic_reply_id`, `forum_topic_reply_topi
 (6, 5, 'rajarshi', '2015-04-15 06:12:22', 'Okay!', 'default-background.jpg'),
 (7, 5, 'rajarshi', '2015-04-15 06:14:36', 'hi!', 'default-background.jpg'),
 (8, 5, 'rajarshi', '2015-04-15 06:15:06', 'ok!', 'NULL'),
-(9, 5, 'rajarshi', '2015-04-15 06:15:48', 'this!', '');
+(9, 5, 'rajarshi', '2015-04-15 06:15:48', 'this!', ''),
+(10, 6, 'ziki', '2019-12-04 15:12:27', 'test', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notice_topic`
+-- Struktur dari tabel `notice_topic`
 --
 
 CREATE TABLE `notice_topic` (
   `notice_topic_id` int(11) NOT NULL,
   `notice_topic_name` text NOT NULL,
-  `notice_topic_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `notice_topic_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `notice_topic_body` text NOT NULL,
   `notice_topic_created_by` varchar(255) NOT NULL,
-  `notice_topic_kategori` varchar(255) NOT NULL
+  `notice_topic_kategori` varchar(255) NOT NULL,
+  `notice_topic_image` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `notice_topic`
+-- Dumping data untuk tabel `notice_topic`
 --
 
-INSERT INTO `notice_topic` (`notice_topic_id`, `notice_topic_name`, `notice_topic_time`, `notice_topic_body`, `notice_topic_created_by`, `notice_topic_kategori`) VALUES
-(3, 'Tari reog', '2015-02-19 09:04:15', 'Akan dilaksanakan di festival', 'ijak', '1'),
-(4, 'uhuy', '2019-12-11 10:25:35', 'hhhhhhaewww', 'admin', '2');
+INSERT INTO `notice_topic` (`notice_topic_id`, `notice_topic_name`, `notice_topic_time`, `notice_topic_body`, `notice_topic_created_by`, `notice_topic_kategori`, `notice_topic_image`) VALUES
+(3, 'Tari reog', '2015-02-19 09:04:15', 'Akan dilaksanakan di festival', 'ijak', '1', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -118,30 +119,31 @@ CREATE TABLE `user` (
   `user_firstname` text NOT NULL,
   `user_lastname` text NOT NULL,
   `user_avatar` varchar(255) NOT NULL,
-  `user_shortbio` text DEFAULT NULL,
+  `user_shortbio` text,
   `user_username` varchar(255) NOT NULL,
-  `user_longbio` text DEFAULT NULL,
+  `user_longbio` text,
   `user_website` varchar(255) DEFAULT NULL,
   `user_dob` date DEFAULT NULL,
-  `user_profession` text DEFAULT NULL,
+  `user_profession` text,
   `user_gender` varchar(255) DEFAULT NULL,
-  `user_address` text DEFAULT NULL,
+  `user_address` text,
   `user_backgroundpicture` varchar(255) NOT NULL,
   `user_joindate` date NOT NULL,
   `user_country` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_firstname`, `user_lastname`, `user_avatar`, `user_shortbio`, `user_username`, `user_longbio`, `user_website`, `user_dob`, `user_profession`, `user_gender`, `user_address`, `user_backgroundpicture`, `user_joindate`, `user_country`) VALUES
 (18, 'nirmalya.email@gmail.com', 'nirmalya', 'Nirmalya', 'Ghosh', 'default.jpg', '', 'nirmalya', NULL, NULL, '2015-02-19', NULL, NULL, NULL, 'default.jpg', '2015-02-19', NULL),
-(19, 'raziki@mail.com', 'ziki', 'Raziki', 'Gforce', 'default.jpg', '', 'ziki', '', '', '2000-06-20', '', 'Male', '', 'default.jpg', '2015-02-19', ''),
+(19, 'raziki@mail.com', 'raziki', 'Raziki', 'Gforce', 'default.jpg', 'Saya indo', 'ziki', 'cek', '', '2000-06-20', '', 'Male', '', 'default.jpg', '2015-02-19', ''),
 (21, 'rajarshi@tarafdar.com', 'rajarshi', 'Rajarshi', 'Tarafdar', '481ewwfvjs-850738315.jpg', '', 'rajarshi', NULL, NULL, '2015-04-02', NULL, NULL, NULL, 'default.jpg', '2015-04-14', NULL),
 (22, 'ihza@gmail.com', 'ijak', 'ihza', 'Okta', 'default.jpg', '', 'ijak', '', '', '1999-10-14', '', 'Male', '', 'default.jpg', '2019-11-27', ''),
-(23, 'ferrysnainin@gmail.com', '1', 'Yais', 'uhuy', 'edited-198167985.png', '', 'admin', '', '', '2000-05-22', '', 'Male', '', 'default.jpg', '2019-12-11', ''),
-(25, 'gaga@gmail.com', 'adg', 'dsggsdg', 'dafa', 'default.jpg', NULL, 'gag', NULL, NULL, NULL, NULL, NULL, NULL, 'default.jpg', '2019-12-11', NULL);
+(23, 'primasdika@gmail.com', 'dika', 'primas', 'dika', 'default.jpg', NULL, 'dika', NULL, NULL, NULL, NULL, NULL, NULL, 'default.jpg', '2019-12-11', NULL),
+(24, 'pras@mail.com', 'pras', 'pras', 'setyo', 'default.jpg', '', 'pras', 'aku', '', '1998-06-12', '', 'Male', '', 'default.jpg', '2019-12-11', ''),
+(25, 'surya@mail.com', 'surya', 'sur', 'ya', 'default.jpg', '', 'surya', NULL, NULL, '2019-12-27', NULL, NULL, NULL, 'default.jpg', '2019-12-11', NULL);
 
 --
 -- Indexes for dumped tables
@@ -182,25 +184,21 @@ ALTER TABLE `user`
 --
 ALTER TABLE `forum_topic`
   MODIFY `forum_topic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT for table `forum_topic_reply`
 --
 ALTER TABLE `forum_topic_reply`
-  MODIFY `forum_topic_reply_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
+  MODIFY `forum_topic_reply_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `notice_topic`
 --
 ALTER TABLE `notice_topic`
-  MODIFY `notice_topic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `notice_topic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-COMMIT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
