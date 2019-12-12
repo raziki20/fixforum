@@ -105,7 +105,9 @@
                                     ?>
                                     <hr>
                                     <div class="col-md-3 column">
-                                        <img src="userfiles/uploads/<?php echo $rws_reply['forum_topic_reply_image'];?>"  class="img-responsive thumbnail">
+                                        <a data-toggle="modal" href="#<?php echo $rws_reply['forum_topic_reply_id']?>">
+                                            <img src="userfiles/uploads/<?php echo $rws_reply['forum_topic_reply_image'];?>"  class="img-responsive thumbnail">
+                                        </a>
                                     </div>
                                     <?php
                                         }
@@ -160,7 +162,7 @@
             <div class="col-lg-12">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
                 <img src="userfiles/uploads/<?php echo $rws['forum_topic_image'];?>" width = '520'>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
@@ -172,3 +174,37 @@
       </div>
     </div>
   </div>
+<?php  
+  $sql_reply2 = "SELECT * FROM forum_topic_reply where forum_topic_reply_topic_id = '$forum_topic_id'";
+    $result_reply2 = mysqli_query($database,$sql_reply2);
+    $rws_reply_count = mysqli_num_rows($result_reply2);
+    while($rws_reply2 = mysqli_fetch_array($result_reply2)){
+?>
+<div class="portfolio-modal modal fade" id="<?php echo $rws_reply2['forum_topic_reply_id']?>" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
+                <img src="userfiles/uploads/<?php echo $rws_reply2['forum_topic_reply_image'];?>" width = '520'>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php
+    }
+  ?>
