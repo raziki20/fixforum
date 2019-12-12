@@ -39,6 +39,7 @@
                                 <?php 
                                 if($rws['notice_topic_image']){
                                     ?>
+                                    <a data-toggle="modal" href="#<?php echo $rws['notice_topic_id']?>">
                                 <img src="userfiles/uploads/<?php echo $rws['notice_topic_image'];?>"  class="img-responsivethumbnail">
                                 <?php
                                         }
@@ -90,6 +91,7 @@
                                 <?php 
                                 if($rws['forum_topic_image']){
                                     ?>
+                                    <a data-toggle="modal" href="#<?php echo $rws['forum_topic_id']?>">
                                 <img src="userfiles/uploads/<?php echo $rws['forum_topic_image'];?>"  class="img-responsive thumbnail">
                                 <?php
                                         }
@@ -103,4 +105,72 @@
 <?php
     }
 ?> 
+<?php  
+    $sql2 = "SELECT * FROM notice_topic where notice_topic_id";
+    $result2 = mysqli_query($database,$sql2);
+    $rws_count = mysqli_num_rows($result2);
+    while($rws2 = mysqli_fetch_array($result2)){
+?>
+<div class="portfolio-modal modal fade" id="<?php echo $rws2['notice_topic_id']?>" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
+                <img src="userfiles/uploads/<?php echo $rws2['notice_topic_image'];?>" width = '520'>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php
+    }
+  ?>
+  <?php  
+    $sql2 = "SELECT * FROM forum_topic where forum_topic_id";
+    $result2 = mysqli_query($database,$sql2);
+    $rws_count = mysqli_num_rows($result2);
+    while($rws2 = mysqli_fetch_array($result2)){
+?>
+<div class="portfolio-modal modal fade" id="<?php echo $rws2['forum_topic_id']?>" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
+                <img src="userfiles/uploads/<?php echo $rws2['forum_topic_image'];?>" width = '520'>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php
+    }
+  ?>
 </body>    

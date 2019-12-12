@@ -68,7 +68,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <h3>Comment</h3>
 <?php 
     $sql_reply = "SELECT * FROM forum_topic_reply where forum_topic_reply_topic_id = '$forum_topic_id'";
     $result_reply = mysqli_query($database,$sql_reply);
@@ -175,7 +175,7 @@
     </div>
   </div>
 <?php  
-  $sql_reply2 = "SELECT * FROM forum_topic_reply where forum_topic_reply_topic_id = '$forum_topic_id'";
+    $sql_reply2 = "SELECT * FROM forum_topic_reply where forum_topic_reply_topic_id = '$forum_topic_id'";
     $result_reply2 = mysqli_query($database,$sql_reply2);
     $rws_reply_count = mysqli_num_rows($result_reply2);
     while($rws_reply2 = mysqli_fetch_array($result_reply2)){
