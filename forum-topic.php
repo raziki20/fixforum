@@ -45,7 +45,7 @@
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['forum_topic_time']; ?></i></p>
                                 <hr>
                                 <div class="topic-user-name">
-                                    <strong><?php echo $rws['forum_topic_name'];?></strong>    
+                                    <h3><?php echo $rws['forum_topic_name'];?></h3>    
                                 </div>
                                 <hr>
                                 <div class="topic-body">
@@ -57,7 +57,9 @@
                                     ?>
                                     <hr>
                                     <div class="col-md-3 column">
+                                    <a data-toggle="modal" href="#portfolioModal1">
                                         <img src="userfiles/uploads/<?php echo $rws['forum_topic_image'];?>"  class="img-responsive thumbnail">
+                                    </a>
                                     </div>
                                     <?php
                                         }
@@ -66,12 +68,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container">
-                        <div class="row clearfix">
-                        <h3>Comment</h3>
-                        </div>
-                    </div>
-             
+
 <?php 
     $sql_reply = "SELECT * FROM forum_topic_reply where forum_topic_reply_topic_id = '$forum_topic_id'";
     $result_reply = mysqli_query($database,$sql_reply);
@@ -83,6 +80,7 @@
         $result_search_username_reply = mysqli_query($database,$sql_search_username_reply);
         $rws_search_username_reply = mysqli_fetch_array($result_search_username_reply);
 ?>
+
 <?php
         if($rws_reply_count > 0){
 ?>
@@ -149,3 +147,28 @@
     }
 ?>
 
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                <img src="userfiles/uploads/<?php echo $rws['forum_topic_image'];?>" width = '520'>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
