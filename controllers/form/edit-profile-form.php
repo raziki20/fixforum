@@ -54,10 +54,6 @@
         <div class="tab-pane fade" id="personal">
             <div class="col-md-6">
                 <div class="form-group float-label-control">
-                    <label for="">Short Bio</label>
-                    <textarea class="form-control" placeholder="<?php echo $rws['user_shortbio'];?>" rows="10" placeholder="<?php echo $rws['user_shortbio'];?>" name="user_shortbio" value="<?php echo $rws['user_shortbio'];?>"><?php echo $rws['user_shortbio'];?></textarea>
-                </div>
-                <div class="form-group float-label-control">
                     <label for="">Birthday</label>   
                     <input type="date" class="form-control" placeholder="<?php echo $rws['user_dob'];?>" name="user_dob" value="<?php echo $rws['user_dob'];?>">      
                 </div>
@@ -77,8 +73,8 @@
                     </div>
                 </div>
                 <div class="form-group float-label-control">
-                    <label for="">Country</label>
-                    <input type="text" class="form-control" placeholder="<?php echo $rws['user_country'];?>" name="user_country" value="<?php echo $rws['user_country'];?>" id="country">    
+                    <label for="">Short Bio</label>
+                    <textarea class="form-control" placeholder="<?php echo $rws['user_shortbio'];?>" rows="10" placeholder="<?php echo $rws['user_shortbio'];?>" name="user_shortbio" value="<?php echo $rws['user_shortbio'];?>"><?php echo $rws['user_shortbio'];?></textarea>
                 </div>
             </div>
             <div class="col-md-6">
@@ -87,8 +83,12 @@
                     <input type="text" class="form-control" placeholder="<?php echo $rws['user_address'];?>" name="user_address" value="<?php echo $rws['user_address'];?>">    
                 </div>
                 <div class="form-group float-label-control">
+                    <label for="">Country</label>
+                    <input type="text" class="form-control" placeholder="<?php echo $rws['user_country'];?>" name="user_country" value="<?php echo $rws['user_country'];?>" id="country">    
+                </div>
+                <div class="form-group float-label-control">
                     <label for="">Sanggar</label>
-                    <textarea class="form-control" rows="20" name="user_longbio" value=""><?php echo $rws['user_longbio'];?></textarea>                           
+                    <textarea class="form-control" rows="12" name="user_longbio" value=""><?php echo $rws['user_longbio'];?></textarea>                           
                 </div>  
             </div>
         </div>

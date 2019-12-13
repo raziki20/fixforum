@@ -46,7 +46,7 @@
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['forum_topic_time']; ?></i></p>
                                 <hr>
                                 <div class="topic-user-name">
-                                    <h2><?php echo $rws['forum_topic_name'];?></h2>    
+                                    <strong><?php echo $rws['forum_topic_name'];?></strong>    
                                 </div>
                                 <hr>
                                 <div class="topic-body">
@@ -66,7 +66,7 @@
                                         }
                                     ?>
                                     <div class="container">
-                                      <h1>Bagikan artikel ini ke </h1>
+                                      <h4>Bagikan artikel ini ke </h4>
                                         <div class="facebook">
                                         <a href="http://www.facebook.com/sharer.php?u=https://dumetschool.com" target="_blank"><span class="fa fa-facebook"></span> facebook</a>
                                         </div>
@@ -76,7 +76,7 @@
                                         <div class="google-plus">
                                         <a href="https://plus.google.com/share?u=https://dumetschool.com" target="_blank"><span class="fa fa-google-plus"></span> google+</a>
                                         </div>
-                                      </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
