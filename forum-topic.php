@@ -1,10 +1,11 @@
 <?php include 'components/authentication.php';      
  include 'controllers/base/head.php'; 
-
     //session_start();
     require '_database/database.php';
     if(isset($_SESSION['user_username'])){
  include 'controllers/navigation/first-navigation.php' ?>
+ <link rel="stylesheet" href="share.css" type="text/css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
     }
     else{
@@ -45,7 +46,7 @@
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['forum_topic_time']; ?></i></p>
                                 <hr>
                                 <div class="topic-user-name">
-                                    <h3><?php echo $rws['forum_topic_name'];?></h3>    
+                                    <h2><?php echo $rws['forum_topic_name'];?></h2>    
                                 </div>
                                 <hr>
                                 <div class="topic-body">
@@ -64,6 +65,18 @@
                                     <?php
                                         }
                                     ?>
+                                    <div class="container">
+                                      <h1>Bagikan artikel ini ke </h1>
+                                        <div class="facebook">
+                                        <a href="http://www.facebook.com/sharer.php?u=https://dumetschool.com" target="_blank"><span class="fa fa-facebook"></span> facebook</a>
+                                        </div>
+                                        <div class="twitter">
+                                        <a href="https://twitter.com/share.php?u=https://dumetschool.com" target="_blank"><span class="fa fa-twitter"></span> twitter</a>
+                                        </div>
+                                        <div class="google-plus">
+                                        <a href="https://plus.google.com/share?u=https://dumetschool.com" target="_blank"><span class="fa fa-google-plus"></span> google+</a>
+                                        </div>
+                                      </div>
                                 </div>
                             </div>
                         </div>
@@ -164,9 +177,10 @@
                 <!-- Project Details Go Here -->
                 <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
                 <img src="userfiles/uploads/<?php echo $rws['forum_topic_image'];?>" width = '520'>
+                <hr>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
+                  <!--<i class="fas fa-times"></i>-->
+                  Close</button>
               </div>
             </div>
           </div>
@@ -195,9 +209,10 @@
                 <!-- Project Details Go Here -->
                 <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
                 <img src="userfiles/uploads/<?php echo $rws_reply2['forum_topic_reply_image'];?>" width = '520'>
+                <hr>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
+                  <!--<i class="fas fa-times"></i>-->
+                  Close</button>
               </div>
             </div>
           </div>

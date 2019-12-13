@@ -1,0 +1,36 @@
+.container{
+    width: 500px;
+    margin: auto;
+  }
+  .facebook,.twitter,.google-plus{
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .facebook{
+    width: 40px;
+    height: 40px;
+    background-color: #2a4299;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+  }
+  .twitter{
+    width: 40px;
+    height: 40px;
+    background-color: #3899fe;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+  }
+  .google-plus{
+    width: 40px;
+    height: 40px;
+    background-color: #fb2929;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+  }
+
