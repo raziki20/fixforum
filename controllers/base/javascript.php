@@ -19,6 +19,7 @@
     <!-- Base JavaScript -->
     <script src="assets/js/base/offcanvas.js"></script>
     <script src="assets/js/base/scripts.js"></script>
+    <script src="assets/js/base/ckeditor.js"></script>
 
     <!-- PACE JavaScript -->
     <script src="assets/js/pace/pace.min.js"></script>
