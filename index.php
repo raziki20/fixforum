@@ -1,6 +1,6 @@
-<?php include 'components/session-check-index.php' ?>
-<?php require '_database/database.php'; ?>
-<?php include 'controllers/base/head.php' ?>
+<?php include 'components/session-check-index.php'; 
+ require '_database/database.php'; 
+ include 'controllers/base/head.php'; ?>
 <body>	
     <script type="text/javascript"> 
         ChangeIt();
@@ -28,8 +28,9 @@
                     <div class="well">
                         <div class="row clearfix">
                             <div class="col-md-1 column">
+                            <a href="user-profile.php?username=<?php echo $temp_user_username; ?>">
                                 <img src="userfiles/avatars/<?php echo $rws_search_username['user_avatar'];?>" class="img-responsive notice-topic-avatar" alt="<?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>">
-                                <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>
+                                <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?></a>
                             </div>
                             <div class="col-md-11 column">
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['notice_topic_time']; ?></i></p>
@@ -80,8 +81,9 @@
                     <div class="well">
                         <div class="row clearfix">
                             <div class="col-md-1 column">
+                            <a href="user-profile.php?username=<?php echo $temp_user_username; ?>">
                                 <img src="userfiles/avatars/<?php echo $rws_search_username['user_avatar'];?>" class="img-responsive forum-topic-avatar" alt="<?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>">
-                                <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>
+                                <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?></a>
                             </div>
                             <div class="col-md-11 column">
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['forum_topic_time']; ?></i></p>

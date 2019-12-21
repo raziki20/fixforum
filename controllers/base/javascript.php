@@ -65,9 +65,9 @@
 
     <!-- Image Rotation -->
     <script type="text/javascript"> 
-        var totalCount = 5;
+        var totalCount = 3;
         function ChangeIt() {
-            var num =  Math.ceil( Math.random() * totalCount );
+            var num = totalCount;
             document.body.background = 'assets/img/backgrounds/background'+num+'.jpg';
             document.body.style.backgroundRepeat = "repeat";
         }
@@ -165,4 +165,9 @@
 
     <script>
         $('#user_firstname').tooltip('toggle')
+    </script>
+
+    <!-- VIEW PASSWORD -->
+    <script type="text/javascript">
+    
     </script>
