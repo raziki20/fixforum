@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12 Des 2019 pada 10.05
+-- Generation Time: 21 Des 2019 pada 07.01
 -- Versi Server: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -21,6 +21,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `fixforum`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `follow`
+--
+
+CREATE TABLE `follow` (
+  `follow_id` int(11) NOT NULL,
+  `follow_current_user` int(11) NOT NULL,
+  `follow_profile_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -81,7 +93,28 @@ INSERT INTO `forum_topic_reply` (`forum_topic_reply_id`, `forum_topic_reply_topi
 (7, 5, 'rajarshi', '2015-04-15 06:14:36', 'hi!', 'default-background.jpg'),
 (8, 5, 'rajarshi', '2015-04-15 06:15:06', 'ok!', 'NULL'),
 (9, 5, 'rajarshi', '2015-04-15 06:15:48', 'this!', ''),
-(10, 6, 'ziki', '2019-12-04 15:12:27', 'test', '');
+(10, 6, 'ziki', '2019-12-04 15:12:27', 'test', ''),
+(11, 6, 'ziki', '2019-12-12 10:34:51', 'hay', '295409-.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kategori`
+--
+
+CREATE TABLE `kategori` (
+  `kategori_id` int(11) NOT NULL,
+  `kategori_name` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `kategori`
+--
+
+INSERT INTO `kategori` (`kategori_id`, `kategori_name`) VALUES
+(1, 'Tari Tradisional'),
+(2, 'Tari Modern'),
+(3, 'Tari Kreasi');
 
 -- --------------------------------------------------------
 
@@ -138,16 +171,35 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_firstname`, `user_lastname`, `user_avatar`, `user_shortbio`, `user_username`, `user_longbio`, `user_website`, `user_dob`, `user_profession`, `user_gender`, `user_address`, `user_backgroundpicture`, `user_joindate`, `user_country`) VALUES
 (18, 'nirmalya.email@gmail.com', 'nirmalya', 'Nirmalya', 'Ghosh', 'default.jpg', '', 'nirmalya', NULL, NULL, '2015-02-19', NULL, NULL, NULL, 'default.jpg', '2015-02-19', NULL),
-(19, 'raziki@mail.com', 'raziki', 'Raziki', 'Gforce', 'default.jpg', 'Saya indo', 'ziki', 'cek', '', '2000-06-20', '', 'Male', '', 'default.jpg', '2015-02-19', ''),
+(19, 'raziki@mail.com', 'raziki', 'Raziki', 'Gforce', 'default.jpg', 'polije', 'ziki', '1millions studio\r\n\r\nJln.mastrip jember', '', '2000-06-20', 'mahasiswa', 'Male', 'bondowoso', 'default.jpg', '2015-02-19', 'indonesia'),
 (21, 'rajarshi@tarafdar.com', 'rajarshi', 'Rajarshi', 'Tarafdar', '481ewwfvjs-850738315.jpg', '', 'rajarshi', NULL, NULL, '2015-04-02', NULL, NULL, NULL, 'default.jpg', '2015-04-14', NULL),
 (22, 'ihza@gmail.com', 'ijak', 'ihza', 'Okta', 'default.jpg', '', 'ijak', '', '', '1999-10-14', '', 'Male', '', 'default.jpg', '2019-11-27', ''),
 (23, 'primasdika@gmail.com', 'dika', 'primas', 'dika', 'default.jpg', NULL, 'dika', NULL, NULL, NULL, NULL, NULL, NULL, 'default.jpg', '2019-12-11', NULL),
 (24, 'pras@mail.com', 'pras', 'pras', 'setyo', 'default.jpg', '', 'pras', 'aku', '', '1998-06-12', '', 'Male', '', 'default.jpg', '2019-12-11', ''),
-(25, 'surya@mail.com', 'surya', 'sur', 'ya', 'default.jpg', '', 'surya', NULL, NULL, '2019-12-27', NULL, NULL, NULL, 'default.jpg', '2019-12-11', NULL);
+(25, 'surya@mail.com', 'surya', 'sur', 'ya', 'default.jpg', '', 'surya', NULL, NULL, '2019-12-27', NULL, NULL, NULL, 'default.jpg', '2019-12-11', NULL),
+(26, 'jekiyudi15@gmail.com', 'test', 'admin', 'forum', 'default.jpg', 'admin forum', 'admin', NULL, NULL, '2000-06-20', NULL, NULL, NULL, 'default.jpg', '2019-12-18', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `view`
+--
+
+CREATE TABLE `view` (
+  `view_id` int(11) NOT NULL,
+  `view_current_user` int(11) NOT NULL,
+  `view_profile_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `follow`
+--
+ALTER TABLE `follow`
+  ADD PRIMARY KEY (`follow_id`);
 
 --
 -- Indexes for table `forum_topic`
@@ -160,6 +212,12 @@ ALTER TABLE `forum_topic`
 --
 ALTER TABLE `forum_topic_reply`
   ADD PRIMARY KEY (`forum_topic_reply_id`);
+
+--
+-- Indexes for table `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`kategori_id`);
 
 --
 -- Indexes for table `notice_topic`
@@ -176,9 +234,20 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `user_username` (`user_username`);
 
 --
+-- Indexes for table `view`
+--
+ALTER TABLE `view`
+  ADD PRIMARY KEY (`view_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `follow`
+--
+ALTER TABLE `follow`
+  MODIFY `follow_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `forum_topic`
 --
@@ -188,7 +257,12 @@ ALTER TABLE `forum_topic`
 -- AUTO_INCREMENT for table `forum_topic_reply`
 --
 ALTER TABLE `forum_topic_reply`
-  MODIFY `forum_topic_reply_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `forum_topic_reply_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `notice_topic`
 --
@@ -198,7 +272,12 @@ ALTER TABLE `notice_topic`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;COMMIT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `view`
+--
+ALTER TABLE `view`
+  MODIFY `view_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

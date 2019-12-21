@@ -42,14 +42,10 @@
                 <h2 class="text-center profile-text profile-profession"><?php echo $rws['user_profession'];?></h2>
                 <div class="panel-group white" id="panel-profile">
                     <div class="panel panel-default white">
-                        <div class="panel-heading white">
-                            <center>
-                                <a class="panel-title" data-toggle="collapse" data-parent="#panel-profile" href="#panel-element-info">Details</a>
-                            </center>
-                        </div>
+                    </div>
                         <div id="panel-element-info" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <div class="col-md-6 column">
+                                <div class="col-md-4 column">
                                     <p class="text-center profile-title"><i class="fa fa-info"></i> Basic</p>
                                     <hr>
 <?php
@@ -93,7 +89,7 @@
                                     </div>
 <?php } ?>
                                 </div>
-                                <div class="col-md-6 column">
+                                <div class="col-md-4 column">
                                     <p class="text-center profile-title"><i class="fa fa-info"></i> Personal</p>
                                     <hr>
 <?php
@@ -106,6 +102,7 @@
                                         <p><?php echo $rws['user_gender'];?></p>
                                     </div>
 <?php } ?>
+
 <?php
     if ($rws['user_dob']){
 ?>   
@@ -116,7 +113,20 @@
                                         <p><?php echo $rws['user_dob'];?></p>
                                     </div>
 <?php } ?>
-               
+                                </div>
+                                <div class="col-md-4 column">
+                                    <p class="text-center profile-title"><i class="fa fa-info"></i> Social</p>
+                                    <hr>
+<?php
+    if ($rws['user_longbio']){
+?>   
+                                    <div class="col-md-4">
+                                        <p class="profile-details"><i class="fa fa-info"></i>Sanggar</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p><?php echo $rws['user_longbio'];?></p>
+                                    </div>
+<?php } ?>
                                 </div>
                             </div>
                         </div>

@@ -1,14 +1,18 @@
 
     <div class="container">
 <?php
-        for($kategori_id=1;$kategori_id<=3;$kategori_id++){
+            $sql2 = "SELECT * FROM kategori ";
+            $result2 = mysqli_query($database,$sql2);
+        while($rws2 = mysqli_fetch_assoc($result2)){
+            $kategori_id = $rws2["kategori_id"];
+            $nama_kat = $rws2["kategori_name"];
             $sql = "SELECT * FROM forum_topic where forum_topic_kategori LIKE '%$kategori_id%' ORDER BY forum_topic_time";
             $result = mysqli_query($database,$sql);
             $rws_count = mysqli_num_rows($result);
 ?>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-center" >Kategori Tari <?php echo $kategori_id; ?></h3>
+                        <h3 class="panel-title text-center" > <?php echo $nama_kat; ?></h3>
                     </div>
 <?php
                 if($rws_count == 0){          
