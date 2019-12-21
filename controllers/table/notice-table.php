@@ -8,7 +8,7 @@
 ?>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Tari <?php echo $kategori_id; ?></h3>
+                        <h3 class="panel-title text-center">Kategori Tari <?php echo $kategori_id; ?></h3>
                     </div>
 <?php
                 if($rws_count == 0){          

@@ -14,7 +14,7 @@
             move_uploaded_file($_FILES['BackgroundImageFile']['tmp_name'], "$Destination/$BackgroundNewImageName");
         }
         else{
-            $RandomNum = rand(0, 9999999999);
+            $RandomNum = rand(0, 999999);
             $ImageName = str_replace(' ','-',strtolower($_FILES['BackgroundImageFile']['name']));
             $ImageType = $_FILES['BackgroundImageFile']['type'];
             $ImageExt = substr($ImageName, strrpos($ImageName, '.'));

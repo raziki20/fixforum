@@ -17,9 +17,9 @@
         });
     </script>
 <?php 
-    session_start();
+    //session_start();
     $current_user = $_SESSION['user_username'];
-    $user_username = mysqli_real_escape_string($database,$_REQUEST['user_username']);
+    //$user_username = mysqli_real_escape_string($database,$_REQUEST['user_username']);
     $profile_username=$rws['user_username'];
 ?>
 <?php
@@ -56,7 +56,7 @@
     if ($rws['user_shortbio']){
 ?>   
                                     <div class="col-md-4">
-                                        <p class="profile-details"><i class="fa fa-info"></i> Bio</p>
+                                        <p class="profile-details"><i class="fa fa-info"></i> Biodata</p>
                                     </div>
                                     <div class="col-md-8">
                                         <p><?php echo $rws['user_shortbio'];?></p>
@@ -116,6 +116,7 @@
                                         <p><?php echo $rws['user_dob'];?></p>
                                     </div>
 <?php } ?>
+               
                                 </div>
                             </div>
                         </div>

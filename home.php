@@ -14,6 +14,19 @@
     }
 ?>
         <h1 class="text-center">Latest Event</h1>
+        <?php
+        if($_SESSION['user_username'] == "admin"){      
+?>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <a class="btn btn-default" href="add-new-notice-post.php">Add New Post</a>
+        </div>
+    </div>
+</div>
+<?php
+        }
+?>
 <?php 
     //session_start();
     $current_user = $_SESSION['user_username'];

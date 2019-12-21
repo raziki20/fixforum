@@ -3,11 +3,7 @@
 <?php include 'controllers/base/head.php' ?>
 <?php include 'controllers/navigation/index-before-login-navigation.php' ?> 
 <?php include 'controllers/base/style.php' ?>
-<?php 
-    if($_GET["follow"]=="same"){
-        $dialogue="Your can't follow yourself! ";
-    }
-?>
+
     <script>
         $.growl("<?php echo $dialogue; ?> ", {
             animate: {
@@ -17,6 +13,7 @@
         });
     </script>
 <?php 
+    if(isset($_SESSION['user_username'])){
     $user_username = mysqli_real_escape_string($database,$_REQUEST['user_username']);
     $current_user = $_SESSION['user_username'];
     $profile_username=$rws['user_username'];
@@ -24,15 +21,15 @@
     $result=  mysqli_query($database,$sql) or die(mysqli_errno());
     $sql_view = "INSERT INTO view(view_current_user, view_profile_user) VALUES('$current_user', '$user_username')";
     $result_view=  mysqli_query($database,$sql_view) or die(mysqli_errno());
-    $trws= mysqli_num_rows($result);
-    if($trws>0){
-        $follow_status="Unfollow";
-    }
-    else{
-        $follow_status="Follow";
-    }
-    if($user_username==$current_user){
-        $display="none";
+    //$trws= mysqli_num_rows($result);}
+    //if($trws>0){
+        //$follow_status="Unfollow";
+    //}
+    //else{
+       // $follow_status="Follow";
+    //}
+    //if($user_username==$current_user){
+        //$display="none";
     }
 ?>
 <?php

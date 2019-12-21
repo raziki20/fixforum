@@ -43,6 +43,22 @@
                                 <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>
                             </div>
                             <div class="col-md-11 column">
+                              <ul class="nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt-square"></i></a>
+                                    <ul class="dropdown-menu">
+                                      <li>
+                                        <a href="http://www.facebook.com/sharer.php?u=https://dumetschool.com" target="_blank"><span class="fa fa-facebook-square"></span> facebook</a>
+                                      </li>
+                                       <li>
+                                          <a href="https://twitter.com/share.php?u=https://dumetschool.com" target="_blank"><span class="fa fa-twitter-square"></span> twitter</a>
+                                       </li>
+                                       <li>
+                                       <a href="https://plus.google.com/share?u=https://dumetschool.com" target="_blank"><span class="fa fa-google-plus-square"></span> google+</a>
+                                      </li>
+                                    </ul>
+                                </li>	
+                              </ul>   
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['forum_topic_time']; ?></i></p>
                                 <hr>
                                 <div class="topic-user-name">
@@ -64,19 +80,7 @@
                                     </div>
                                     <?php
                                         }
-                                    ?>
-                                    <div class="container">
-                                      <h4>Bagikan artikel ini ke </h4>
-                                        <div class="facebook">
-                                        <a href="http://www.facebook.com/sharer.php?u=https://dumetschool.com" target="_blank"><span class="fa fa-facebook"></span> facebook</a>
-                                        </div>
-                                        <div class="twitter">
-                                        <a href="https://twitter.com/share.php?u=https://dumetschool.com" target="_blank"><span class="fa fa-twitter"></span> twitter</a>
-                                        </div>
-                                        <div class="google-plus">
-                                        <a href="https://plus.google.com/share?u=https://dumetschool.com" target="_blank"><span class="fa fa-google-plus"></span> google+</a>
-                                        </div>
-                                    </div>
+                                    ?>    
                                 </div>
                             </div>
                         </div>
