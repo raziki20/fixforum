@@ -2,20 +2,7 @@
 <?php include 'components/session-check-profile.php' ?>
 <?php include 'controllers/base/head.php' ?>
 <?php include 'controllers/navigation/first-navigation.php' ?> 
-<?php include 'controllers/base/style.php' ?>
-<?php 
-    if($_GET["follow"]=="same"){
-        $dialogue="Your can't follow yourself! ";
-    }
-?>
-    <script>
-        $.growl("<?php echo $dialogue; ?> ", {
-            animate: {
-                enter: 'animated zoomInDown',
-                exit: 'animated zoomOutUp'
-            }								
-        });
-    </script>
+<?php include 'controllers/base/user.php' ?>
 <?php 
     //session_start();
     $current_user = $_SESSION['user_username'];
@@ -42,6 +29,11 @@
                 <h2 class="text-center profile-text profile-profession"><?php echo $rws['user_profession'];?></h2>
                 <div class="panel-group white" id="panel-profile">
                     <div class="panel panel-default white">
+                        <div class="panel-heading white">
+                            <center>
+                                <a class="panel-title" data-toggle="collapse" data-parent="#panel-profile" href="#panel-element-info">Details</a>
+                            </center>
+                        </div>
                     </div>
                         <div id="panel-element-info" class="panel-collapse collapse in">
                             <div class="panel-body">

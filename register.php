@@ -1,6 +1,6 @@
-<?php include 'components/session-check-index.php' ?>
-<?php include 'controllers/base/head.php' ?>
-<?php include 'controllers/navigation/index-before-login-navigation.php' ?>
+<?php include 'components/session-check-index.php';
+ include 'controllers/base/head.php'; 
+ include 'controllers/navigation/index-before-login-navigation.php' ?>
 <div class="container">
     <div class="row">
       <div class="main">
@@ -29,9 +29,7 @@
                          <div class="col-lg-12">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <!-- http://<?php echo $rws['domain_websiteaddress'];?>/user_username= --> Cek
-                                    </span>
+                                    <span class="input-group-addon"> Cek</span>
                                     <input type="username" class="form-control input-lg" placeholder="Username" name="user_username" id="user_username" required> 
                                     <span class="input-group-addon" id="status"></span>
                                 </div>
@@ -41,14 +39,19 @@
                         <div class="row">     
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input type="password" class="form-control input-lg" placeholder="Password" name="user_password" required>
+                                    <input type="password" class="password-register form-control input-lg" placeholder="Password" name="user_password" required>
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"  id="button-password">
+                                    <label class="form-check-label" for="defaultCheck1"> View Password</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="row">    
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <button class="btn btn-primary ladda-button" data-style="zoom-in" type="submit"  id="SubmitButton" value="Upload" style="float:left;" name="signup_button"/>Register</button>
+                                    <button class="btn btn-primary ladda-button" data-style="zoom-in" type="submit"  id="SubmitButton" value="Upload" style="float:left;" name="signup_button">Register</button>
                                 </div>
                             </div>
                         </div>
