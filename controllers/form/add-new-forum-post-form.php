@@ -20,11 +20,3 @@
     <hr>
     <button type="submit" class="btn btn-primary" name="submit_button" id="submit_button">Submit</button>
 </form>
-
- <script>
-        ClassicEditor
-            .create( document.querySelector( '#forum-topic-body' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-</script>

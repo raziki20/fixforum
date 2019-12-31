@@ -1,6 +1,9 @@
 <?php include 'components/session-check-index.php' ?>
 <?php include 'controllers/base/head.php' ?>
 <?php include 'controllers/navigation/index-before-login-navigation.php' ?>
+<script type="text/javascript"> 
+        ChangeIt();
+    </script>
 <div class="container">
     <div class="row">
         <div class="main">

@@ -10,6 +10,7 @@
 
     <!-- JQuery UI Tabs JavaScript -->
     <script src="assets/js/base/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	
     <!-- Bootstrap Form Helpers -->
     <link href="assets/js/bootstrap-form-helpers/bootstrap-formhelpers.js"></script>
@@ -19,7 +20,6 @@
     <!-- Base JavaScript -->
     <script src="assets/js/base/offcanvas.js"></script>
     <script src="assets/js/base/scripts.js"></script>
-    <script src="assets/js/base/ckeditor.js"></script>
 
     <!-- PACE JavaScript -->
     <script src="assets/js/pace/pace.min.js"></script>
@@ -167,8 +167,17 @@
     <script>
         $('#user_firstname').tooltip('toggle')
     </script>
+
     <!-- VIEW PASSWORD -->
     <script type="text/javascript">
-    
+     $('#button-password').click(function () {
+        if($(this).is(':checked')) {
+            $('.password-register').attr('type', 'text');
+        } else {
+            $('.password-register').attr('type', 'password');
+        }
+
+    });
     </script>
 
+    

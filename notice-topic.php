@@ -41,6 +41,19 @@
                                 <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>
                             </div>
                             <div class="col-md-11 column">
+                            <ul class="nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                    <ul class="dropdown-menu">
+                                      <li>
+                                        <a href="components/delete-notice-post.php?notice_topic_id=<?php echo $notice_topic_id; ?>"><span class="fa fa-trash"></span> Delete</a>
+                                      </li>
+                                       <li>
+                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Laporkan</a>
+                                       </li>
+                                    </ul>
+                                </li>	
+                              </ul>  
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['notice_topic_time']; ?></i></p>
                                 <hr>
                                 <div class="topic-user-name">

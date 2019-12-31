@@ -1,6 +1,10 @@
 <?php include 'components/session-check-index.php';
  include 'controllers/base/head.php'; 
- include 'controllers/navigation/index-before-login-navigation.php' ?>
+ include 'controllers/navigation/index-before-login-navigation.php'; ?>
+ <script type="text/javascript"> 
+        ChangeIt();
+    </script>
+    
 <div class="container">
     <div class="row">
       <div class="main">
@@ -39,7 +43,7 @@
                         <div class="row">     
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input type="password" class="password-register form-control input-lg" placeholder="Password" name="user_password" required>
+                                    <input type="password" class="password-register form-control input-lg" placeholder="Password" name="user_password" id="passwordfield" required>
                                     <div class="form-check">
                                     <input class="form-check-input" type="checkbox"  id="button-password">
                                     <label class="form-check-label" for="defaultCheck1"> View Password</label>
@@ -47,7 +51,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="row">    
                             <div class="col-lg-6">
                                 <div class="form-group">
