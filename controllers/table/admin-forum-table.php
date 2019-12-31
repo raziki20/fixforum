@@ -26,7 +26,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                
+                                <th>Acces</th>
                                 <th>Topic Name</th>
                                 <th>Created By</th>
                             </tr>
@@ -40,7 +40,7 @@
 ?>
                         <tbody>
                             <tr>
-                                
+                                <td><a href="components/delete-admin-forum.php?forum_topic_id=<?php echo $rws['forum_topic_id'];?>"> <i class="fa fa-trash"></i> </a></td>
                                 <td><a href="forum-topic.php?forum_topic_id=<?php echo $rws['forum_topic_id'];?>"><?php echo $rws['forum_topic_name'];?></a></td>
                                 <td><?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?></td>
                             </tr>

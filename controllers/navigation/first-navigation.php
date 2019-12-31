@@ -30,6 +30,15 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $row['user_firstname'];?> <?php echo $row['user_lastname'];?><strong class="caret"></strong></a>                  
                         <ul class="dropdown-menu">
+                        <?php
+                            if($_SESSION['user_username'] == "admin"){      
+                        ?>
+                            <li>
+                                <a href="admin.php"><i class="fa fa-users"></i>Menu Admin</a>
+                            </li>
+                        <?php
+                            }
+                            ?>
                             <li>
                                 <a href="my-profile.php"><i class="fa fa-user"></i> Profile</a>
                             </li>

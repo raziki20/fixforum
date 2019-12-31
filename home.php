@@ -5,6 +5,9 @@
     require '_database/database.php';
     if(isset($_SESSION['user_username'])){
     include 'controllers/navigation/first-navigation.php'; ?>
+    <script type="text/javascript"> 
+        ChangeIt();
+    </script>
 <?php
     }
     else{
@@ -52,6 +55,23 @@
                                 <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?></a>
                             </div>
                             <div class="col-md-11 column">
+                            <ul class="nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                    <ul class="dropdown-menu">
+                                    <?php
+                                        if($_SESSION['user_username'] == "admin"){      
+                                      ?>
+                                      <li>
+                                        <a href="components/delete-notice-post.php?notice_topic_id=<?php echo $notice_topic_id; ?>"><span class="fa fa-trash"></span> Delete</a>
+                                      </li>
+                                        <?php } ?>
+                                       <li>
+                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Laporkan</a>
+                                       </li>
+                                    </ul>
+                                </li>	
+                              </ul>  
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['notice_topic_time']; ?></i></p>
                                 <hr>
                                 <strong><a href="notice-topic.php?notice_topic_id=<?php echo $rws['notice_topic_id'];?>"> <?php echo $rws['notice_topic_name'];?></a></strong>
@@ -106,6 +126,21 @@
                                 <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?></a>
                             </div>
                             <div class="col-md-11 column">
+                            <ul class="nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                    <ul class="dropdown-menu">
+                                    <?php if(($temp_user_username==$current_user)or($_SESSION['user_username'] == "admin")){ ?>
+                                      <li>
+                                        <a href="components/delete-forum-post.php?forum_topic_id=<?php echo $forum_topic_id; ?>"><span class="fa fa-trash"></span> Delete</a>
+                                      </li>
+                                        <?php } ?>
+                                       <li>
+                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Laporkan</a>
+                                       </li>
+                                    </ul>
+                                </li>	
+                              </ul>  
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['forum_topic_time']; ?></i></p>  <hr>
                                 <strong><a href="forum-topic.php?forum_topic_id=<?php echo $rws['forum_topic_id'];?>"> <?php echo $rws['forum_topic_name'];?></a></strong>
                                 <hr>

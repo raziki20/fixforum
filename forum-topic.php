@@ -4,6 +4,9 @@
     require '_database/database.php';
     if(isset($_SESSION['user_username'])){
  include 'controllers/navigation/first-navigation.php' ?>
+ <script type="text/javascript"> 
+        ChangeIt();
+    </script>
  <link rel="stylesheet" href="share.css" type="text/css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
@@ -11,6 +14,9 @@
     else{
 ?>
 <?php include 'controllers/navigation/index-before-login-navigation.php' ?>
+<script type="text/javascript"> 
+        ChangeIt();
+    </script>
 <?php
     }
 ?>
@@ -43,6 +49,21 @@
                                 <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>
                             </div>
                             <div class="col-md-11 column">
+                            <ul class="nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                    <ul class="dropdown-menu">
+                                      <?php if(($temp_user_username==$current_user)or($_SESSION['user_username'] == "admin")){ ?>
+                                      <li>
+                                        <a href="components/delete-forum-post.php?forum_topic_id=<?php echo $forum_topic_id ?>"><span class="fa fa-trash"></span> Delete</a>
+                                      </li>
+                                      <?php } ?>
+                                       <li>
+                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Laporkan</a>
+                                       </li>
+                                    </ul>
+                                </li>	
+                              </ul>  
                               <ul class="nav navbar-right">
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt-square"></i></a>
@@ -58,7 +79,7 @@
                                       </li>
                                     </ul>
                                 </li>	
-                              </ul>   
+                              </ul>
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['forum_topic_time']; ?></i></p>
                                 <hr>
                                 <div class="topic-user-name">
