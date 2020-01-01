@@ -111,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    <h3>Comment</h3>
+                    <h2>Comment</h2>
 <?php 
     $sql_reply = "SELECT * FROM forum_topic_reply where forum_topic_reply_topic_id = '$forum_topic_id'";
     $result_reply = mysqli_query($database,$sql_reply);
@@ -205,7 +205,7 @@
                     <div class="well">
                         <div class="row clearfix">
                             <div class="col-md-12 column">
-                                <h3 class="text-center">You need to <a href="login.php">Log In</a> or <a href="register.php">Register</a> to post comments.</h3>
+                                <h2 class="text-center">You need to <a href="login.php">Log In</a> or <a href="register.php">Register</a> to post comments.</h2>
                             </div>
                         </div>
                     </div>

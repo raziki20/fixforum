@@ -4,11 +4,15 @@
  <script type="text/javascript"> 
         ChangeIt();
     </script>
-    
+<br>
+<br>
+<br>
+<br>
 <div class="container">
+    <div class="panel-body col-md-6 col-md-offset-3">
     <div class="row">
       <div class="main">
-          <h3 style="color:#65aeee;">Please <a href="login.php">Log In</a> or Register</h3>
+          <h2 >Please <a href="login.php">Log In</a> or Register</h2>
                     <form class="form col-md-12 center-block" action="components/registration.php" method="post" autocomplete="off">
                         <div class="row">     
                             <div class="col-lg-6" style="z-index: 9;">
@@ -59,6 +63,7 @@
                             </div>
                         </div>
                     </form>
+             </div>       
         </div>
     </div>
 </div>

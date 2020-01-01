@@ -117,12 +117,7 @@
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                            <div class="panel-heading white">
-                            <center>
-                                <a class="panel-title" data-toggle="collapse" data-parent="#panel-profile" href="#panel-element-info">Postingan</a>
-                            </center>
-                            <hr>
+                        
                             
                         </div>
                     </div>

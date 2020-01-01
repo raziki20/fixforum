@@ -1,5 +1,5 @@
 <br>
-<h3>Post Your Comment</h3>
+<h2>Post Your Comment</h2>
 <form action="components/forum-topic-reply.php?forum_topic_id=<?php echo $rws['forum_topic_id'];?>" method="post" enctype="multipart/form-data" id="UploadForm">
     <div class="form-group">
         <label for="forum-topic-reply-body">Comment</label>

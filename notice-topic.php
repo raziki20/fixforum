@@ -6,11 +6,17 @@
     if(isset($_SESSION['user_username'])){
 ?>
 <?php include 'controllers/navigation/first-navigation.php' ?>
+<script type="text/javascript"> 
+        ChangeIt();
+    </script>
 <?php
     }
     else{
 ?>
 <?php include 'controllers/navigation/index-before-login-navigation.php' ?>
+<script type="text/javascript"> 
+        ChangeIt();
+    </script>
 <?php
     }
 ?>

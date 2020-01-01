@@ -6,7 +6,7 @@
 <div class="container top">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Update Post</h3>
+            <h2 class="panel-title">Update Post</h2>
         </div>
         <div class="panel-body">
             <?php include 'controllers/form/update-forum-post.php' ?>

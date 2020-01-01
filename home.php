@@ -22,8 +22,8 @@
 ?>
 <div class="container">
     <div class="row clearfix">
-        <div class="col-md-12 column">
-            <a class="btn btn-default" href="add-new-notice-post.php">Add New Post</a>
+      <div class=" col-md-3 column">
+            <a class="btn btn-default" href="add-new-notice-post.php">Add New Event</a>
         </div>
     </div>
 </div>
@@ -38,23 +38,25 @@
     while($rws = mysqli_fetch_array($result)){
                     
         $temp_user_username = $rws['notice_topic_created_by'];
+        $notice_topic_id = $rws['notice_topic_id'];
         $sql_search_username = "SELECT * FROM user WHERE user_username = '$temp_user_username'";
         $result_search_username = mysqli_query($database,$sql_search_username) or die(mysqli_error($database));
         $rws_search_username = mysqli_fetch_array($result_search_username);
 ?>
         <div class="container">
-            <div class="panel panel-default">
+        
+            <div class="panel panel-default col-md-8 col-md-offset-2">
                 <div class="panel-body">
                     
                     <br>
                     <div class="well">
                         <div class="row clearfix">
-                            <div class="col-md-1 column">
+                            <div class="col-md-2 column">
                                 <a href="profile.php?username=<?php echo $temp_user_username; ?>">  
                                 <img src="userfiles/avatars/<?php echo $rws_search_username['user_avatar'];?>" class="img-responsive notice-topic-avatar" alt="<?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>">
                                 <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?></a>
                             </div>
-                            <div class="col-md-11 column">
+                            <div class="col-md-10 column">
                             <ul class="nav navbar-right">
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
@@ -67,7 +69,7 @@
                                       </li>
                                         <?php } ?>
                                        <li>
-                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Laporkan</a>
+                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Report</a>
                                        </li>
                                     </ul>
                                 </li>	
@@ -80,7 +82,7 @@
                                 if($rws['notice_topic_image']){
                                     ?>
                                     <a data-toggle="modal" href="#<?php echo $rws['notice_topic_id']?>">
-                                <img src="userfiles/uploads/<?php echo $rws['notice_topic_image'];?>"  class="img-responsivethumbnail">
+                                <img src="userfiles/uploads/<?php echo $rws['notice_topic_image'];?>"  class="img-responsive thumbnail">
                                 <?php
                                         }
                                     ?>
@@ -96,8 +98,8 @@
         <h1 class="text-center">Latest Forum Topics</h1>
         <div class="container ">
         <div class="row clearfix">
-            <div class="col-md-12 column">
-                <a class="btn btn-default" href="add-new-forum-post.php">Add New Post</a>
+            <div class="col-md-3 column">
+                <a class="btn btn-default " href="add-new-forum-post.php">Add New Post</a>
             </div>
         </div>
     </div>
@@ -109,23 +111,24 @@
     while($rws = mysqli_fetch_array($result)){
                     
         $temp_user_username = $rws['forum_topic_created_by'];
+        $forum_topic_id = $rws['forum_topic_id'];
         $sql_search_username = "SELECT * FROM user WHERE user_username = '$temp_user_username'";
         $result_search_username = mysqli_query($database,$sql_search_username) or die(mysqli_error($database));
         $rws_search_username = mysqli_fetch_array($result_search_username);
 ?>
         <div class="container">
-            <div class="panel panel-default">
-                <div class="panel-body">
+            <div class="panel panel-default col-md-8 col-md-offset-2">
+                <div class="panel-body ">
                     
                     <br>
                     <div class="well">
                         <div class="row clearfix">
-                            <div class="col-md-1 column">
+                            <div class="col-md-2 column">
                                 <a href="profile.php?username=<?php echo $temp_user_username; ?>">
                                 <img src="userfiles/avatars/<?php echo $rws_search_username['user_avatar'];?>" class="img-responsive forum-topic-avatar" alt="<?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>">
                                 <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?></a>
                             </div>
-                            <div class="col-md-11 column">
+                            <div class="col-md-10 ">
                             <ul class="nav navbar-right">
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
@@ -136,7 +139,7 @@
                                       </li>
                                         <?php } ?>
                                        <li>
-                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Laporkan</a>
+                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Report</a>
                                        </li>
                                     </ul>
                                 </li>	
