@@ -11,7 +11,7 @@
             move_uploaded_file($_FILES['ImageFile']['tmp_name'], "$Destination/$NewImageName");
         }
         else{
-            $RandomNum = rand(0, 9999999999);
+            $RandomNum = rand(0, 999999);
             $ImageName = str_replace(' ','-',strtolower($_FILES['ImageFile']['name']));
             $ImageType = $_FILES['ImageFile']['type'];
             $ImageExt = substr($ImageName, strrpos($ImageName, '.'));

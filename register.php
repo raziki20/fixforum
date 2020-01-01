@@ -45,7 +45,7 @@
                                 <div class="form-group">
                                     <input type="password" class="password-register form-control input-lg" placeholder="Password" name="user_password" id="passwordfield" required>
                                     <div class="form-check">
-                                    <input class="form-check-input" type="checkbox"  id="button-password">
+                                    <input class="form-check-input" type="checkbox"  id="cek-password">
                                     <label class="form-check-label" for="defaultCheck1"> View Password</label>
                                     </div>
                                 </div>
@@ -62,3 +62,14 @@
         </div>
     </div>
 </div>
+<!-- VIEW PASSWORD -->
+<script type="text/javascript">
+     $('#cek-password').click(function () {
+        if($(this).is(':checked')) {
+            $('.password-register').attr('type', 'text');
+        } else {
+            $('.password-register').attr('type', 'password');
+        }
+
+    });
+    </script>

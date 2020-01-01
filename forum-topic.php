@@ -58,6 +58,11 @@
                                         <a href="components/delete-forum-post.php?forum_topic_id=<?php echo $forum_topic_id ?>"><span class="fa fa-trash"></span> Delete</a>
                                       </li>
                                       <?php } ?>
+                                      <?php if($temp_user_username==$current_user){ ?>
+                                      <li>
+                                          <a href="update-forum-post.php?topic_id=<?php echo $forum_topic_id?>" ><span class="fa fa-edit"></span>Edit</a>
+                                       </li>
+                                      <?php } ?>
                                        <li>
                                           <a href="" target="_blank"><span class="fa fa-warning"></span> Laporkan</a>
                                        </li>
@@ -114,6 +119,7 @@
     while($rws_reply = mysqli_fetch_array($result_reply)){
         
         $temp_user_username_reply = $rws_reply['forum_topic_reply_created_by'];
+        $forum_reply_id = $rws_reply['forum_topic_reply_id'];
         $sql_search_username_reply = "SELECT * FROM user WHERE user_username = '$temp_user_username_reply'";
         $result_search_username_reply = mysqli_query($database,$sql_search_username_reply);
         $rws_search_username_reply = mysqli_fetch_array($result_search_username_reply);
@@ -132,6 +138,26 @@
                                 <div class="topic-user-name">
                                     
                                 </div>
+                                <ul class="nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                    <ul class="dropdown-menu">
+                                      <?php if(($temp_user_username==$current_user)or($_SESSION['user_username'] == "admin")){ ?>
+                                      <li>
+                                        <a href="components/delete-forum-reply.php?forum_topic_reply_id=<?php echo $forum_reply_id ?>&topic_id=<?php echo $forum_topic_id ?>"><span class="fa fa-trash"></span> Delete</a>
+                                      </li>
+                                      <?php } ?>
+                                      <?php if($temp_user_username==$current_user){ ?>
+                                      <li>
+                                          <a href="" target="_blank"><span class="fa fa-edit"></span>Edit</a>
+                                       </li>
+                                      <?php } ?>
+                                       <li>
+                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Laporkan</a>
+                                       </li>
+                                    </ul>
+                                </li>	
+                              </ul>
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws_reply['forum_topic_reply_time']; ?></i></p>
                                 <hr>
                                 <div class="topic-body">
