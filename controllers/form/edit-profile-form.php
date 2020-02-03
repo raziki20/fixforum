@@ -69,7 +69,7 @@
                     </div>              
                     <div class="radio-inline">
                         <label>
-                            <input type="radio" name="user_gender" id="optionsRadios1" value="Female">Female</label>
+                            <input type="radio" name="user_gender" id="optionsRadios1" value="Female" >Female</label>
                     </div>
                 </div>
                 <div class="form-group float-label-control">

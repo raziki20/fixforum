@@ -10,9 +10,9 @@
     <div class="form-group">
         <label for="forum-topic-kategori">Kategori</label>
         <br>
-        <label class="radio-inline" for="kategori-inline-radio1"><input type="radio" id="kategori-inline-radio1" name="forum_topic_kategori[]" value="1"> Tari Tradisional </label>
-        <label class="radio-inline" for="kategori-inline-radio2"><input type="radio" id="kategori-inline-radio2" name="forum_topic_kategori[]" value="2"> Tari Modern </label>
-        <label class="radio-inline" for="kategori-inline-radio3"><input type="radio" id="kategori-inline-radio3" name="forum_topic_kategori[]" value="3"> Tari Kreasi </label>
+        <label class="radio-inline" for="kategori-inline-radio1"><input type="radio" id="kategori-inline-radio1" name="forum_topic_kategori[]" value="1"required> Tari Tradisional </label>
+        <label class="radio-inline" for="kategori-inline-radio2"><input type="radio" id="kategori-inline-radio2" name="forum_topic_kategori[]" value="2"required> Tari Modern </label>
+        <label class="radio-inline" for="kategori-inline-radio3"><input type="radio" id="kategori-inline-radio3" name="forum_topic_kategori[]" value="3"required> Tari Kreasi </label>
     </div>
     <hr>
     <label for="forum-topic-attachment">Upload Images</label>

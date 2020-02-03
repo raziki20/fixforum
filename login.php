@@ -16,11 +16,11 @@
           <form role="form" action="components/login-process.php" method="post" name="login">
               <div class="form-group">
                   <label for="inputUsernameEmail">Username or email</label>
-                  <input type="text" class="form-control" id="inputUsernameEmail" name="username" placeholder="Username">
+                  <input type="text" class="form-control" id="inputUsernameEmail" name="username" placeholder="Username" required>
               </div>
               <div class="form-group">
                   <label for="inputPassword">Password</label>
-                  <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+                  <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" required>
               </div>
               <button type="submit" class="btn btn btn-primary ladda-button" data-style="zoom-in" value="Sign In" name="login_button">
                   Log In  

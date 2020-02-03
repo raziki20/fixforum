@@ -142,14 +142,14 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
                                     <ul class="dropdown-menu">
-                                      <?php if(($temp_user_username==$current_user)or($_SESSION['user_username'] == "admin")){ ?>
+                                      <?php if(($temp_user_username_reply==$current_user)or($_SESSION['user_username'] == "admin")){ ?>
                                       <li>
                                         <a href="components/delete-forum-reply.php?forum_topic_reply_id=<?php echo $forum_reply_id ?>&topic_id=<?php echo $forum_topic_id ?>"><span class="fa fa-trash"></span> Delete</a>
                                       </li>
                                       <?php } ?>
-                                      <?php if($temp_user_username==$current_user){ ?>
+                                      <?php if($temp_user_username_reply==$current_user){ ?>
                                       <li>
-                                          <a href="" target="_blank"><span class="fa fa-edit"></span>Edit</a>
+                                          <a href="" data-toggle="modal" data-target="#c<?php echo $forum_reply_id ?>" target="_blank"><span class="fa fa-edit"></span>Edit</a>
                                        </li>
                                       <?php } ?>
                                        <li>
@@ -274,3 +274,35 @@
   <?php
     }
   ?>
+<?php
+ $sql_reply = "SELECT * FROM forum_topic_reply where forum_topic_reply_topic_id = '$forum_topic_id'";
+ $result_reply = mysqli_query($database,$sql_reply);
+ $rws_reply_count = mysqli_num_rows($result_reply);
+ while($rws_reply = mysqli_fetch_array($result_reply)){
+
+$temp_user_username_reply = $rws_reply['forum_topic_reply_created_by'];
+        $forum_reply_id = $rws_reply['forum_topic_reply_id'];
+?>
+   <!-- Modal -->
+   <div class="modal fade" id="c<?php echo $forum_reply_id ?>" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Komentar</h4>
+        </div>
+        <div class="modal-body">
+          <div class="topic-body">
+                <i class="fa fa-question-circle"></i> <?php echo $rws_reply['forum_topic_reply_body'];?>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <?php } ?>

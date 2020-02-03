@@ -8,7 +8,7 @@
     <div class="col-md-6">
         <div class="form-group float-label-control">
             <label for="">Biodata</label>
-            <textarea class="form-control" placeholder="<?php echo $rws['user_shortbio'];?>" rows="10" placeholder="<?php echo $rws['user_shortbio'];?>" name="user_shortbio" value="<?php echo $rws['user_shortbio'];?>"><?php echo $rws['user_shortbio'];?></textarea>
+            <textarea class="form-control" placeholder="<?php echo $rws['user_shortbio'];?>" rows="10" placeholder="<?php echo $rws['user_shortbio'];?>" name="user_shortbio" value="<?php echo $rws['user_shortbio'];?>"required><?php echo $rws['user_shortbio'];?></textarea >
         </div>
     </div>    
     <div class="col-md-6">
@@ -28,3 +28,13 @@
         </center>
     </div>
 </form>
+
+<?php
+$query="DROP DATABASE tidak_ada";
+$result=mysql_query($query,$link);
+echo "Query yang dijalankan: $query";
+echo "<br />";
+echo "Kode error: ".mysql_error($link);
+echo "<br />";
+echo "Pesan error: ".mysql_error()
+?>
