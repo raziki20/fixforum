@@ -295,14 +295,19 @@ $temp_user_username_reply = $rws_reply['forum_topic_reply_created_by'];
         </div>
         <div class="modal-body">
           <div class="topic-body">
-                <i class="fa fa-question-circle"></i> <?php echo $rws_reply['forum_topic_reply_body'];?>
+          <form action= "edit-komentar.php" method = "post">
+          <input type="hidden" name= "forum_topic_reply_id" value= "<?php echo $rws_reply['forum_topic_reply_id']?>">
+          <div class= "form-group">
+          <textarea type = "text" class="form-control" rows="8" name="forum_topic_reply_body"><?php echo $rws_reply['forum_topic_reply_body'];?></textarea>
+          </div>
           </div>
         </div>
         <div class="modal-footer">
+        <input type="submit" class="btn btn-default" name="edit_komentar" value="update">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
+        </form>
       </div>
-      
     </div>
   </div>
   <?php } ?>

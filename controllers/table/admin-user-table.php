@@ -2,7 +2,7 @@
     <div class="container">
 <?php
             
-            $sql = "SELECT * FROM user where user_username ";
+            $sql = "SELECT * FROM user where user_id ";
             $result = mysqli_query($database,$sql);
             $rws_count = mysqli_num_rows($result);
 ?>
@@ -29,14 +29,14 @@
                         </thead>
 <?php                   
                     while($rws = mysqli_fetch_array($result)){
-                        $temp_user_username = $rws['user_username'];
-                        $temp_email = $rws['user_email'];
+                         $rws['user_username'];
+                         $rws['user_email'];
 ?>
                         <tbody>
                             <tr>
-                            <td><a href="components/delete-user.php?user_id=<?php echo$temp_user_username['user_id'];?>"> <i class="fa fa-trash"></i> </a></td>
-                            <td><a href="my-profile.php?user_id=<?php echo$temp_user_username['user_id'];?>"><?php echo$temp_user_username['user_username'];?></a></td>
-                            <td><?php echo $temp_email['user_email'];?>?></td>
+                            <td><a href="components/delete-user.php?user_id=<?php echo $rws['user_id'];?>"> <i class="fa fa-trash"></i> </a></td>
+                            <td><a href="my-profile.php?user_id=<?php echo $rws['user_id'];?>"><?php echo$rws['user_username'];?></a></td>
+                            <td><?php echo $rws['user_email'];?></td>
                             </tr>
                         </tbody>
 <?php   

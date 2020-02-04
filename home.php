@@ -33,12 +33,12 @@
 <?php 
     //session_start();
     $current_user = $_SESSION['user_username'];
-    $sql = "SELECT * FROM notice_topic ORDER BY notice_topic_time DESC";
-    $result = mysqli_query($database,$sql);
-    while($rws = mysqli_fetch_array($result)){
+    $sql1 = "SELECT * FROM notice_topic ORDER BY notice_topic_time DESC";
+    $result1 = mysqli_query($database,$sql1);
+    while($rws1 = mysqli_fetch_array($result1)){
                     
-        $temp_user_username = $rws['notice_topic_created_by'];
-        $notice_topic_id = $rws['notice_topic_id'];
+        $temp_user_username = $rws1['notice_topic_created_by'];
+        $notice_topic_id = $rws1['notice_topic_id'];
         $sql_search_username = "SELECT * FROM user WHERE user_username = '$temp_user_username'";
         $result_search_username = mysqli_query($database,$sql_search_username) or die(mysqli_error($database));
         $rws_search_username = mysqli_fetch_array($result_search_username);
@@ -46,7 +46,7 @@
         <div class="container">
         
             <div class="panel panel-default col-md-8 col-md-offset-2">
-                <div class="panel-body">
+                <div class="panel-body">/
                     
                     <br>
                     <div class="well">
@@ -74,15 +74,15 @@
                                     </ul>
                                 </li>	
                               </ul>  
-                                <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['notice_topic_time']; ?></i></p>
+                                <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws1['notice_topic_time']; ?></i></p>
                                 <hr>
-                                <strong><a href="notice-topic.php?notice_topic_id=<?php echo $rws['notice_topic_id'];?>"> <?php echo $rws['notice_topic_name'];?></a></strong>
+                                <strong><a href="notice-topic.php?notice_topic_id=<?php echo $rws1['notice_topic_id'];?>"> <?php echo $rws1['notice_topic_name'];?></a></strong>
                                 <hr>
                                 <?php
-                                if($rws['notice_topic_image']){
+                                if($rws1['notice_topic_image']){
                                     ?>
-                                    <a data-toggle="modal" href="#<?php echo $rws['notice_topic_id']?>">
-                                <img src="userfiles/uploads/<?php echo $rws['notice_topic_image'];?>"  class="img-responsive thumbnail">
+                                    <a data-toggle="modal" href="#<?php echo $rws1['notice_topic_id']?>">
+                                <img src="userfiles/uploads/<?php echo $rws1['notice_topic_image'];?>"  class="img-responsive thumbnail">
                                 <?php
                                         }
                                     ?>
@@ -166,12 +166,12 @@
     }
 ?> 
 <?php  
-    $sql2 = "SELECT * FROM notice_topic where notice_topic_id";
-    $result2 = mysqli_query($database,$sql2);
-    $rws_count = mysqli_num_rows($result2);
-    while($rws2 = mysqli_fetch_array($result2)){
+    $sql1 = "SELECT * FROM notice_topic where notice_topic_id";
+    $result1 = mysqli_query($database,$sql1);
+    $rws_count1 = mysqli_num_rows($result1);
+    while($rws1 = mysqli_fetch_array($result1)){
 ?>
-<div class="portfolio-modal modal fade" id="<?php echo $rws2['notice_topic_id']?>" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="<?php echo $rws1['notice_topic_id']?>" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
@@ -185,10 +185,10 @@
               <div class="modal-body">
                 <!-- Project Details Go Here -->
                 <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
-                <img src="userfiles/uploads/<?php echo $rws2['notice_topic_image'];?>" width = '520'>
+                <img src="userfiles/uploads/<?php echo $rws1['notice_topic_image'];?>" width = '520'>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
+                  <!-- <i class="fas fa-times"></i> -->
+                  Close</button>
               </div>
             </div>
           </div>
@@ -200,12 +200,12 @@
     }
   ?>
   <?php  
-    $sql2 = "SELECT * FROM forum_topic where forum_topic_id";
-    $result2 = mysqli_query($database,$sql2);
-    $rws_count = mysqli_num_rows($result2);
-    while($rws2 = mysqli_fetch_array($result2)){
+    $sql3 = "SELECT * FROM forum_topic where forum_topic_id";
+    $result3 = mysqli_query($database,$sql3);
+    $rws_count3 = mysqli_num_rows($result3);
+    while($rws3 = mysqli_fetch_array($result3)){
 ?>
-<div class="portfolio-modal modal fade" id="<?php echo $rws2['forum_topic_id']?>" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="<?php echo $rws3['forum_topic_id']?>" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
@@ -219,10 +219,10 @@
               <div class="modal-body">
                 <!-- Project Details Go Here -->
                 <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
-                <img src="userfiles/uploads/<?php echo $rws2['forum_topic_image'];?>" width = '520'>
+                <img src="userfiles/uploads/<?php echo $rws3['forum_topic_image'];?>" width = '520'>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
+                  <!-- <i class="fas fa-times"></i> -->
+                  Close</button>
               </div>
             </div>
           </div>
