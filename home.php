@@ -68,24 +68,21 @@
                                         <a href="components/delete-notice-post.php?notice_topic_id=<?php echo $notice_topic_id; ?>"><span class="fa fa-trash"></span> Delete</a>
                                       </li>
                                         <?php } ?>
-                                       <li>
-                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Report</a>
-                                       </li>
                                     </ul>
                                 </li>	
                               </ul>  
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws1['notice_topic_time']; ?></i></p>
                                 <hr>
-                                <strong><a href="notice-topic.php?notice_topic_id=<?php echo $rws1['notice_topic_id'];?>"> <?php echo $rws1['notice_topic_name'];?></a></strong>
+                                <strong><a href="notice-topic.php?notice_topic_id=<?php echo $rws1['notice_topic_id'];?>"> <?php echo $rws1['notice_topic_name'];?></strong>
                                 <hr>
                                 <?php
                                 if($rws1['notice_topic_image']){
                                     ?>
-                                    <a data-toggle="modal" href="#<?php echo $rws1['notice_topic_id']?>">
+                                    <a href="notice-topic.php?notice_topic_id=<?php echo $rws1['notice_topic_id']?>">
                                 <img src="userfiles/uploads/<?php echo $rws1['notice_topic_image'];?>"  class="img-responsive thumbnail">
                                 <?php
                                         }
-                                    ?>
+                                    ?></a>
                             </div>
                         </div>
                     </div>
@@ -138,9 +135,6 @@
                                         <a href="components/delete-forum-post.php?forum_topic_id=<?php echo $forum_topic_id; ?>"><span class="fa fa-trash"></span> Delete</a>
                                       </li>
                                         <?php } ?>
-                                       <li>
-                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Report</a>
-                                       </li>
                                     </ul>
                                 </li>	
                               </ul>  
@@ -150,7 +144,7 @@
                                 <?php 
                                 if($rws['forum_topic_image']){
                                     ?>
-                                    <a data-toggle="modal" href="#<?php echo $rws['forum_topic_id']?>">
+                                    <a href="forum-topic.php?forum_topic_id=<?php echo $rws['forum_topic_id']?>">
                                 <img src="userfiles/uploads/<?php echo $rws['forum_topic_image'];?>"  class="img-responsive thumbnail">
                                 <?php
                                         }
@@ -165,71 +159,3 @@
 <?php
     }
 ?> 
-<?php  
-    $sql1 = "SELECT * FROM notice_topic where notice_topic_id";
-    $result1 = mysqli_query($database,$sql1);
-    $rws_count1 = mysqli_num_rows($result1);
-    while($rws1 = mysqli_fetch_array($result1)){
-?>
-<div class="portfolio-modal modal fade" id="<?php echo $rws1['notice_topic_id']?>" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
-                <img src="userfiles/uploads/<?php echo $rws1['notice_topic_image'];?>" width = '520'>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <!-- <i class="fas fa-times"></i> -->
-                  Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <?php
-    }
-  ?>
-  <?php  
-    $sql3 = "SELECT * FROM forum_topic where forum_topic_id";
-    $result3 = mysqli_query($database,$sql3);
-    $rws_count3 = mysqli_num_rows($result3);
-    while($rws3 = mysqli_fetch_array($result3)){
-?>
-<div class="portfolio-modal modal fade" id="<?php echo $rws3['forum_topic_id']?>" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
-                <img src="userfiles/uploads/<?php echo $rws3['forum_topic_image'];?>" width = '520'>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <!-- <i class="fas fa-times"></i> -->
-                  Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <?php
-    }
-  ?>

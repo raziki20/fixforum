@@ -42,12 +42,13 @@
                     <br>
                     <div class="well">
                         <div class="row clearfix">
-                            <div class="col-md-1 column">
-                                <img src="userfiles/avatars/<?php echo $rws_search_username['user_avatar'];?>" class="img-responsive notice-topic-avatar" alt="<?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>">
-                                <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>
+                        <div class="col-md-1 column">
+                                <a href="profile.php?username=<?php echo $temp_user_username; ?>">
+                                <img src="userfiles/avatars/<?php echo $rws_search_username['user_avatar'];?>" class="img-responsive forum-topic-avatar" alt="<?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>">
+                                <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?></a>
                             </div>
                             <div class="col-md-11 column">
-                            <ul class="nav navbar-right">
+                            <!-- <ul class="nav navbar-right">
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
                                     <ul class="dropdown-menu">
@@ -59,7 +60,7 @@
                                        </li>
                                     </ul>
                                 </li>	
-                              </ul>  
+                              </ul>   -->
                                 <p class="margin-top50"><i><strong>Posted On:</strong> <?php echo $rws['notice_topic_time']; ?></i></p>
                                 <hr>
                                 <div class="topic-user-name">
@@ -100,13 +101,14 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-12">
-              <div class="modal-body">
+            <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                <img src="userfiles/uploads/<?php echo $rws['forum_topic_image'];?>" width = '520'>
+                <!-- <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt=""> -->
+                <img src="userfiles/uploads/<?php echo $rws['notice_topic_image'];?>" width = '520'>
+                <hr>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
+                  <!-- <i class="fas fa-times"></i> -->
+                  Close</button>
               </div>
             </div>
           </div>

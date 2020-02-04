@@ -45,8 +45,9 @@
                     <div class="well">
                         <div class="row clearfix">
                             <div class="col-md-1 column">
+                                <a href="profile.php?username=<?php echo $temp_user_username; ?>">
                                 <img src="userfiles/avatars/<?php echo $rws_search_username['user_avatar'];?>" class="img-responsive forum-topic-avatar" alt="<?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>">
-                                <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>
+                                <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?></a>
                             </div>
                             <div class="col-md-11 column">
                             <ul class="nav navbar-right">
@@ -63,9 +64,8 @@
                                           <a href="update-forum-post.php?topic_id=<?php echo $forum_topic_id?>" ><span class="fa fa-edit"></span>Edit</a>
                                        </li>
                                       <?php } ?>
-                                       <li>
-                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Laporkan</a>
-                                       </li>
+                                      
+                                
                                     </ul>
                                 </li>	
                               </ul>  
@@ -130,9 +130,10 @@
 ?>
                     <div class="well">
                         <div class="row clearfix">
-                            <div class="col-md-1 column">
-                                <img src="userfiles/avatars/<?php echo $rws_search_username_reply['user_avatar'];?>" class="img-responsive forum-topic-avatar" alt="<?php echo $rws_search_username_reply_reply['user_firstname'];?> <?php echo $rws_search_username_reply['user_lastname'];?>">
-                                <?php echo $rws_search_username_reply['user_firstname'];?> <?php echo $rws_search_username_reply['user_lastname'];?>
+                        <div class="col-md-2 column">
+                                <a href="profile.php?username=<?php echo $temp_user_username; ?>">
+                                <img src="userfiles/avatars/<?php echo $rws_search_username['user_avatar'];?>" class="img-responsive forum-topic-avatar" alt="<?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?>">
+                                <?php echo $rws_search_username['user_firstname'];?> <?php echo $rws_search_username['user_lastname'];?></a>
                             </div>
                             <div class="col-md-11 column">
                                 <div class="topic-user-name">
@@ -152,9 +153,7 @@
                                           <a href="" data-toggle="modal" data-target="#c<?php echo $forum_reply_id ?>" target="_blank"><span class="fa fa-edit"></span>Edit</a>
                                        </li>
                                       <?php } ?>
-                                       <li>
-                                          <a href="" target="_blank"><span class="fa fa-warning"></span> Laporkan</a>
-                                       </li>
+                                      
                                     </ul>
                                 </li>	
                               </ul>
@@ -226,7 +225,7 @@
             <div class="col-lg-12">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
+                <!-- <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt=""> -->
                 <img src="userfiles/uploads/<?php echo $rws['forum_topic_image'];?>" width = '520'>
                 <hr>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
@@ -258,7 +257,7 @@
             <div class="col-lg-12">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt="">
+                <!-- <img class="img-fluid d-block mx-auto" src="userfiles/uploads" alt=""> -->
                 <img src="userfiles/uploads/<?php echo $rws_reply2['forum_topic_reply_image'];?>" width = '520'>
                 <hr>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
